@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mental Stress Detection System</title>
+  <style>
+
+    body
+     { 
+      font-family: Arial, sans-serif; 
+      background:#84d9df;
+      color:#0a0a0a;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+     }
+
+    .container
+     { 
+       display:flex;
+       gap:20px;
+       margin-top:20px;
+     }
+
+    .controls
+      { 
+        display:flex; 
+        flex-direction:column; 
+        gap:10px;
+      }
+
+    button
+      {
+         padding:10px 16px;
+         border-radius:8px;
+         border:none; 
+         cursor:pointer; 
+         font-size:16px;
+      }
+
+    #startBtn
+      {
+         background:linear-gradient(90deg,#14d221,#16bc1e); 
+         color:#0b0517 
+      }
+
+    #stopBtn
+      {
+         background:linear-gradient(90deg,#f44336,#c62828); 
+         color:#0f0e14 
+      }
+
+    .video-card
+      {
+         background:#c9c6c6; 
+         padding:10px; 
+         border-radius:8px; 
+      }
+
+    img#videoStream
+      {
+         width:800px; 
+         max-width:80vw; 
+         border-radius:6px; 
+      }
+
+    .status
+      {
+         margin-top:8px; 
+      }
+
+  </style>
+</head>
+<body>
+  <h1>Mental Stress Detection through Real Time Emotion</h1>
+  <div class="container">
+    <div class="video-card">
+      <img id="videoStream" src="/video_feed/" alt="Video stream" />
+      <div class="status" id="status">Status: <span id="running">Unknown</span></div>
+    </div>
+    <div class="controls">
+      <h2>Click the <b>Start Button</b></h2>
+      <button id="startBtn">Start Detection</button>
+      <button id="stopBtn">Stop Detection</button>
+      <div id="msg"></div>
+    </div>
+  </div>
+  <script src="/static/detector_app/main.js"></script>
+</body>
+</html>
